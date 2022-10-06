@@ -9,7 +9,7 @@ export default function WelcomePage() {
     <View style={styles.container}>
 
     
-      <Image style={styles.logo} source={require('../assets/logo.png')} />
+      <Image style={styles.logo} source={require('../assets/icon.png')} />
 
       <Text style={styles.paragraph}>
         Welcome to Emospace. Sign up to start your Journey with us or if you already have an account with, than just Log in . Proudly designed by Mlab.
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     height: 158,
     width: 188,
   marginTop:'50%',
+ 
   },
 
   paragraph: {
