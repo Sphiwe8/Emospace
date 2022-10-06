@@ -15,6 +15,8 @@ export default function Login() {
 
 
   return (
+
+    
     <View style={styles.container}>
     <Image style={styles.logo} source={require('../assets/tiny.png')} />
 
@@ -88,6 +90,7 @@ const styles = StyleSheet.create({
     height: 80,
     width: 180,
     marginTop:25,
+    
     
   },
 
