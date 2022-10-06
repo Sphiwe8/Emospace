@@ -3,12 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './componets/Login';
 import Signup from './componets/Signup';
 import Welcome from './componets/WelcomePage';
-import Journal from './componets/Journal';
+import Emotions from './componets/Emotions';
+import Cause from './componets/Cause';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Journal />
+      <Cause />
      
       <StatusBar style="auto" />
     </View>
