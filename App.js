@@ -8,20 +8,43 @@ import Cause from './componets/Cause';
 import BottomNav from './componets/BottomNav';
 import Sound from './componets/sound';
 
-export default function App() {
+
+
+
+const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+
+function DrawerRoutes() {
   return (
-    <View style={styles.container}>
-      <Cause />
+    <Drawer.Navigator useLegacyImplementation>
+
+      <Drawer.Screen name="" component={Sounds} />
+      <Drawer.Screen name="Stores" component={Screen1} />
      
-      <StatusBar style="auto" />
-    </View>
+    </Drawer.Navigator>
+
   );
 }
+export default function App() {
+  return (
+    <NavigationContainer>
+    <Stack.Navigator>
+    
+      
+          <Stack.Screen name="sounds" component={DrawerRoutes} />
 
+            <Stack.Screen name="" component={DrawerRoutes} />
+       
+         
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    
+
   },
 });
