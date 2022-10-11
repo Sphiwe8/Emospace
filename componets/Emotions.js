@@ -164,7 +164,7 @@ export default function Emotions() {
 
 const styles = StyleSheet.create({
   container: {
-    padding:60,
+    padding:30,
     height:'100%',
     
      
@@ -184,7 +184,7 @@ justifyContent:'space-between',
 flexDirection:'row',
 justifyContent:'center',
 alignItems:'center',
-marginTop:40,
+marginTop:10,
 
 
   },
@@ -195,10 +195,10 @@ marginTop:40,
   },
 
   happy:{
-width:90,
-height:90,
-marginTop:40,
-margin:2,
+width:80,
+height:80,
+marginTop:35,
+margin:4,
 alignSelf:'center',
 
   },

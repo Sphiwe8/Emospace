@@ -33,7 +33,7 @@ export default function Cause() {
             <View  style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Family.png')} />
             <Text style={styles.imageText}>
-            Happy
+            Family
             </Text>
             </View>
             </TouchableOpacity>
@@ -43,7 +43,7 @@ export default function Cause() {
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Friends.png')} />
             <Text style={styles.imageText}>
-            Love
+            Friends
             </Text>
             </View>
             </TouchableOpacity>
@@ -151,6 +151,8 @@ export default function Cause() {
 
         </View>
 
+
+       
     
         
     
@@ -166,11 +168,13 @@ export default function Cause() {
 
 const styles = StyleSheet.create({
   container: {
-    padding:60,
+    padding:30,
     height:'100%',
     
      
   },
+
+
 
   paragraph:{
     fontSize:22,
@@ -181,12 +185,14 @@ const styles = StyleSheet.create({
   },
 
 
+
+
   imageContainer:{
 justifyContent:'space-between',
 flexDirection:'row',
 justifyContent:'center',
 alignItems:'center',
-marginTop:40,
+marginTop:10,
 
 
   },
@@ -197,10 +203,10 @@ marginTop:40,
   },
 
   happy:{
-width:90,
-height:90,
-marginTop:40,
-margin:2,
+width:75,
+height:75,
+marginTop:38,
+margin:6,
 alignSelf:'center',
 
   },
@@ -221,11 +227,20 @@ alignSelf:'center',
     fontWeight: '500',
     color: '#2FA4FF',
     
-    
-
   },
 
-  
+ 
+
+
+
+
+  home:{
+    width:50,
+    height:40,
+    marginTop:7,
+  },
+
+ 
 
 
 
