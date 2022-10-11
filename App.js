@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+
+import Emotional from './components/EmotionalFacts';
+import General from './components/GeneralFacts';
+import Popular from './components/Popular'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+     <Emotional/>
+
+ 
     </View>
   );
 }
@@ -13,8 +18,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+
+    backgroundColor: '#ecf0f1',
+    padding: 8,
   },
+
 });
