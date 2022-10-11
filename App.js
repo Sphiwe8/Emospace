@@ -6,6 +6,7 @@ import Welcome from './componets/WelcomePage';
 import Emotions from './componets/Emotions';
 import Cause from './componets/Cause';
 import Sounds from './componets/sound';
+import Quotes from './componets/MotiveQuotes';
 
 
 
