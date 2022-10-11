@@ -5,7 +5,7 @@ import Signup from './componets/Signup';
 import Welcome from './componets/WelcomePage';
 import Emotions from './componets/Emotions';
 import Cause from './componets/Cause';
-
+import Sounds from './componets/sound';
 
 
 
@@ -27,14 +27,19 @@ function DrawerRoutes() {
 }
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Cause />
-     
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+    <Stack.Navigator>
+    
+      
+          <Stack.Screen name="sounds" component={DrawerRoutes} />
 
+            <Stack.Screen name="" component={DrawerRoutes} />
+       
+         
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
