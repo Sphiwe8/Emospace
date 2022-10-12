@@ -14,13 +14,15 @@ function DrawerRoutes() {
   return (
     <Drawer.Navigator useLegacyImplementation>
 
-      <Drawer.Screen name="" component={Sounds} />
+      <Drawer.Screen name="" component={Sound} />
       <Drawer.Screen name="Stores" component={Screen1} />
      
     </Drawer.Navigator>
 
   );
 }
+
+
 export default function App() {
   return (
     <NavigationContainer>

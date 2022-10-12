@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Images } from 'react-native';
 import { Card } from 'react-native-paper';
-import { Text, View,StyleSheet,Image  } from 'react-native';
+
 import music from '../assets/musical-notes.png';
 import menu from '../assets/menu-2.png';
 
