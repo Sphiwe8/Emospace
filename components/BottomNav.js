@@ -2,11 +2,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Emotions from '../componets/Emotions';
-import Cause from '../componets/Cause';
-import Journal from '../componets/Journal';
-import Signup from '../componets/Signup';
-import Welcome from '../componets/WelcomePage';
+import Emotions from '../components/Emotions';
+
+import Home from '../components/home';
+
+import Profile from '../components/Profile';
+
+import Sounds from '../components/Sound';
+
+import Video from '../components/Video';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +21,7 @@ function BottomNav() {
     <NavigationContainer>
         
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Emotions} 
+      <Tab.Screen name="Home" component={Home} 
        options={{
         tabBarLabel: 'Home', 
         tabBarIcon: ({ color }) => (
@@ -26,7 +30,7 @@ function BottomNav() {
       }}
       />
 
-      <Tab.Screen name="Music" component={Cause} 
+      <Tab.Screen name="Music" component={Sounds} 
       options={{
         tabBarLabel: 'Music',
         tabBarIcon: ({ color }) => (
@@ -36,7 +40,7 @@ function BottomNav() {
      
       />
 
-<Tab.Screen name="Journal" component={Journal} 
+<Tab.Screen name="Journal" component={Emotions} 
       options={{
         tabBarLabel: 'plus',
         tabBarIcon: ({ color }) => (
@@ -47,7 +51,7 @@ function BottomNav() {
       }}
       />
 
-<Tab.Screen name="Video" component={Signup} 
+<Tab.Screen name="Video" component={Video} 
        options={{
         tabBarLabel: 'video',
         tabBarIcon: ({ color }) => (
@@ -57,7 +61,7 @@ function BottomNav() {
       />
 
 
-<Tab.Screen name="Profile" component={Welcome} 
+<Tab.Screen name="Profile" component={Profile} 
        options={{
         tabBarLabel: 'profile',
         tabBarIcon: ({ color }) => (
@@ -81,9 +85,7 @@ const styles = StyleSheet.create({
         height:40,
         backgroundColor:'#9FC9F3',
         borderRadius:20,
-
-        
-         
+     
       },
 
     });

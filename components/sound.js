@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Images } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { Card } from 'react-native-paper';
 
 import music from '../assets/musical-notes.png';
@@ -22,53 +22,116 @@ Help for focus,healing,relax or sleep. Mix sounds together
 <Text  style={styles.text}>Playlist</Text>
 <Text  style={styles.text1}>10 Sounds</Text>
 
-<Card  style={styles.card2}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Beach Waves And Birds</Text>
+
+<View   style={styles.musicContainer}>
+  <ScrollView>
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Rain
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Forest
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Sunny day
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Farm
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Big city
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Ocean Splash
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Birds
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Thunder Storm
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Lallabay
+</Text>
+</Card>
+
+<Card  style={styles.card2}>  
+    <View style={{flexDirection: "row", justifyContent:'space-between', marginTop:8,}}>
+<Image source={ music} style={{ width: 30, height: 35, marginLeft:15, }}/>
+<Image source={ menu} style={{ width: 25, height: 35, marginLeft:-15, }}/>
+</View>
+<Text style={styles.songName}>
+Universe
+</Text>
 </Card>
 
 
-<Card  style={styles.card3}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Fire</Text>
-</Card>
+</ScrollView>
+</View>
 
 
-<Card  style={styles.card4}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Big City</Text>
-</Card>
 
 
-<Card  style={styles.card5}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Farm</Text>
-</Card>
-
-
-<Card  style={styles.card6}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Rain</Text>
-</Card>
-
-
-<Card  style={styles.card7}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Forest</Text>
-</Card>
-
-
-<Card  style={styles.card8}>
-<Image source={ music} style={{ width: 30, height: 35,marginLeft: 5,marginTop: 5}}/>
-<Image source={ menu} style={{ width: 25, height: 35,marginLeft: 275,marginTop: -32}}/>
-<Text  style={styles.text2}>Sunny Day</Text>
-</Card>
 
 
 
@@ -86,139 +149,80 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 8,
   },
+
+  musicContainer:{
+ marginTop: 70,
+  },
 card1:{
   width: '100%',
-  height: '170px',
-  backgroundColor: '#4DA5C0'
+  height: 170,
+  backgroundColor: '#4DA5C0',
+  
 },
 card2:{
-position:'absolute',
+marginTop: 20,
 width: '97%',
-height: '50px',
-top: '235px',
-justifyContent: 'center',
+height: 60,
 background: '#777777',
 
 
 },
-card3:{
-position:'absolute',
-width: '97%',
-height: '50px',
-top: '296px',
-justifyContent: 'center',
-background: '#777777'
-},
-card4:{
-position:'absolute',
-width: '97%',
-height: '50px',
-top: '357px',
-justifyContent: 'center',
-background: '#777777'
-},
-card5:{
-position:'absolute',
-width: '97%',
-height: '50px',
-top: '419px',
-justifyContent: 'center',
-background: '#777777'
-},
-card6:{
-position:'absolute',
-width: '97%',
-height: '50px',
-top: '481px',
-justifyContent: 'center',
-background: '#777777'
-},
-card7:{
-position:'absolute',
-width: '97%',
-height: '50px',
-top: '543px',
-justifyContent: 'center',
-background: '#777777'
-},
-card8:{
-position:'absolute',
-width: '97%',
-height: '50px',
-top: '605px',
-justifyContent: 'center',
-background: '#777777'
-},
 
+songName:{
+marginTop:-35,
+marginLeft:70,
+letterSpacing:3,
+fontSize:28,
+fontWeight:'300'
+
+},
 
 
 
 heading:{
 position: 'absolute',
-width: '396px',
-height: '38px',
-left: '25px',
-top: '20px',
-fontFamily: 'Inter',
-fontStyle: 'normal',
-fontWeight: 600,
-fontSize: '30px',
-lineHeight: '44px',
-color: '#FFFFFF'
+alignSelf:'center',
+textAlign:'center',
+top: 20,
+fontWeight: '600',
+fontSize: 30,
+lineHeight: 44,
+color: '#FFFFFF',
 },
 paragraph:{
 position: 'absolute',
-width: '250px',
-height: '66px',
-left: '40px',
-top: '70px',
-fontFamily: 'Inter',
-fontStyle: 'normal',
-fontWeight: 300,
-fontSize: '20px',
-lineHeight: '24px',
-justifyContent: 'center',
+width: 270,
+top: 70,
+alignSelf:'center',
+fontWeight: '300',
+fontSize: 22,
 color: '#585757'
 },
 text:{
 position: 'absolute',
-width: '114px',
-height: '34px',
-left: '15px',
-top: '180px',
-fontFamily: 'Inter',
-fontStyle: 'normal',
-fontWeight: 300,
-fontSize: '26px',
-lineHeight: '31px',
+width: 114,
+height: 34,
+left: 15,
+top: 180,
+
+fontWeight: '300',
+fontSize: 26,
+lineHeight: 31,
 color: '#6C6767'
 },
 text1:{
 position: 'absolute',
-width: '110px',
-height: '15px',
-left: '15px',
-top: '210px',
-fontFamily: 'Inter',
-fontStyle: 'normal',
-fontWeight: 300,
-fontSize: '13px',
-lineHeight: '16px',
+width: 110,
+height: 15,
+left: 15,
+top: 210,
+
+fontWeight: '300',
+fontSize: 13,
+lineHeight: 16,
 color: '#554F4F'
 },
- text2:{
-   position: 'absolute',
-width: '250px',
-height: '40px',
-left: '43px',
-top: '10px',
-fontFamily: 'Inter',
-fontStyle: 'normal',
-fontWeight: 300,
-fontSize: '20px',
-lineHeight: '29px',
-color: '#000000'
- }
+
 
 
 });
