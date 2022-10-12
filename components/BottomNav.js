@@ -3,13 +3,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Emotions from '../components/Emotions';
-import Cause from '../components/Cause';
-import Journal from '../components/Journal';
-import Signup from '../components/Signup';
-import Popular from '../components/Popular';
-import General from '../components/GeneralFacts';
 
-import Emotional from '../components/EmotionalFacts';
+import Home from '../components/home';
+
+import Profile from '../components/Profile';
+
+import Sounds from '../components/Sound';
+
+import Video from '../components/Video';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +21,7 @@ function BottomNav() {
     <NavigationContainer>
         
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Emotions} 
+      <Tab.Screen name="Home" component={Home} 
        options={{
         tabBarLabel: 'Home', 
         tabBarIcon: ({ color }) => (
@@ -29,7 +30,7 @@ function BottomNav() {
       }}
       />
 
-      <Tab.Screen name="Music" component={General} 
+      <Tab.Screen name="Music" component={Sounds} 
       options={{
         tabBarLabel: 'Music',
         tabBarIcon: ({ color }) => (
@@ -39,7 +40,7 @@ function BottomNav() {
      
       />
 
-<Tab.Screen name="Journal" component={Journal} 
+<Tab.Screen name="Journal" component={Emotions} 
       options={{
         tabBarLabel: 'plus',
         tabBarIcon: ({ color }) => (
@@ -50,7 +51,7 @@ function BottomNav() {
       }}
       />
 
-<Tab.Screen name="Video" component={Emotional} 
+<Tab.Screen name="Video" component={Video} 
        options={{
         tabBarLabel: 'video',
         tabBarIcon: ({ color }) => (
@@ -60,7 +61,7 @@ function BottomNav() {
       />
 
 
-<Tab.Screen name="Profile" component={Popular} 
+<Tab.Screen name="Profile" component={Profile} 
        options={{
         tabBarLabel: 'profile',
         tabBarIcon: ({ color }) => (

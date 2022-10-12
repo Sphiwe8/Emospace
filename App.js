@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import Welcome from './components/WelcomePage';
 import BottomNav from './components/BottomNav';
-import Profile from './components/Profile';
+
 
 
 
@@ -14,7 +14,7 @@ export default function App() {
 
     
     <View style={styles.container}>
-      <Profile />
+      <BottomNav />
     </View>
          
 
