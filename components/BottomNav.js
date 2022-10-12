@@ -2,11 +2,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import {StyleSheet, View} from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Emotions from '../componets/Emotions';
-import Cause from '../componets/Cause';
-import Journal from '../componets/Journal';
-import Signup from '../componets/Signup';
-import Welcome from '../componets/WelcomePage';
+import Emotions from '../components/Emotions';
+import Cause from '../components/Cause';
+import Journal from '../components/Journal';
+import Signup from '../components/Signup';
+import Popular from '../components/Popular';
+import General from '../components/GeneralFacts';
+
+import Emotional from '../components/EmotionalFacts';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +29,7 @@ function BottomNav() {
       }}
       />
 
-      <Tab.Screen name="Music" component={Cause} 
+      <Tab.Screen name="Music" component={General} 
       options={{
         tabBarLabel: 'Music',
         tabBarIcon: ({ color }) => (
@@ -47,7 +50,7 @@ function BottomNav() {
       }}
       />
 
-<Tab.Screen name="Video" component={Signup} 
+<Tab.Screen name="Video" component={Emotional} 
        options={{
         tabBarLabel: 'video',
         tabBarIcon: ({ color }) => (
@@ -57,7 +60,7 @@ function BottomNav() {
       />
 
 
-<Tab.Screen name="Profile" component={Welcome} 
+<Tab.Screen name="Profile" component={Popular} 
        options={{
         tabBarLabel: 'profile',
         tabBarIcon: ({ color }) => (
@@ -81,9 +84,7 @@ const styles = StyleSheet.create({
         height:40,
         backgroundColor:'#9FC9F3',
         borderRadius:20,
-
-        
-         
+     
       },
 
     });
