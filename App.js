@@ -5,18 +5,8 @@ import Signup from './componets/Signup';
 import Welcome from './componets/WelcomePage';
 import Emotions from './componets/Emotions';
 import Cause from './componets/Cause';
-<<<<<<< HEAD
-import Sounds from './componets/sound';
 import Quotes from './componets/MotiveQuotes';
-=======
-import BottomNav from './componets/BottomNav';
-import Sound from './componets/sound';
->>>>>>> fd810a180bd8840c81d187db3d2d70a0c42c66a4
 
-
-
-
-const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 
