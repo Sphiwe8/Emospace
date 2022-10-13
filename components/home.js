@@ -8,10 +8,10 @@ import Swiper from "react-native-web-swiper";
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}> Psychological Facts</Text>
+      <Text style={styles.header}>Psychological Facts</Text>
       <View style={styles.box}>
        <View style={{flex:1}}>
-                  <Swiper
+                  <Swiper style={styles.swiper}
                     Horizontal
                     loop
                     timeout={5.5}
@@ -33,16 +33,16 @@ export default function Home() {
                     }}
                   >
                       <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"#c9ffff)"}}>
-                          <Text style={styles.qoutes}>"It takes about 66 days<br/> for an average individual<br/> to make something a daily habit."</Text>
+                          <Text style={styles.qoutes}>"It takes about 66 daysfor an average individual to make something a daily habit."</Text>
                       </View>
                       <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(20,200,20,0.3)"}}>
-                          <Text style={styles.qoutes}>“We cannot solve problems<br/> with the kind of thinking we employed <br/>when we came up with them.”</Text>
+                          <Text style={styles.qoutes}>“We cannot solve problems with the kind of thinking we employed when we came up with them.”</Text>
                       </View>
                       <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(200,20,20,0.3)"}}>
                           <Text style={styles.qoutes}>"Its never too late to make a change"</Text>
                       </View>
                        <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"#fc7f03"}}>
-                          <Text style={styles.qoutes}>“Learn as if you will live forever,<br/> live like you will die tomorrow.” <br/>— Mahatma Gandhi</Text>
+                          <Text style={styles.qoutes}>“Learn as if you will live forever, live like you will die tomorrow.” — Mahatma Gandhi</Text>
                       </View>
                        <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"#fcc603"}}>
                           <Text style={styles.qoutes}>Slide 5</Text>
@@ -73,23 +73,23 @@ export default function Home() {
         <View style={styles.box1}>
           <Image
             style={styles.icon}
-            source={require('../Categorize.png')}
+            source={require('../assets/Categorize.png')}
           />
-          <Text style={styles.text1}>Catagories</Text>
+          <Text style={styles.factsText}>Catagories</Text>
         </View>
 
         <View style={styles.box2}>
-          <Image style={styles.icon} source={require('../Star.png')} />
-          <Text style={styles.text1}>Popular </Text>
+          <Image style={styles.icon} source={require('../assets/Star.png')} />
+          <Text style={styles.factsText}>Popular </Text>
         </View>
 
         <View style={styles.box3}>
           <Image
             style={styles.icon}
-            source={require('../generall.png')}
+            source={require('../assets/generall.png')}
           />
 
-          <Text style={styles.text2}>General</Text>
+          <Text style={styles.factsText}>General</Text>
         </View>
       </View>
 
@@ -97,23 +97,23 @@ export default function Home() {
 
       <View style={styles.mainborder}>
         <View style={styles.border1}>
-          <Image style={styles.img} source={require('../Love.png')} />
+          <Image style={styles.img} source={require('../assets/Love.png')} />
           <Text style={styles.imgtext}>LOVE </Text>
         </View>
 
         <View style={styles.border2}>
-          <Image style={styles.img} source={require('../fear.png')} />
+          <Image style={styles.img} source={require('../assets/fear.png')} />
           <Text style={styles.imgtext}>FEAR </Text>
         </View>
       </View>
       <View style={styles.mainborder}>
         <View style={styles.border3}>
-          <Image style={styles.img} source={require('../sad.png')} />
+          <Image style={styles.img} source={require('../assets/sad.png')} />
           <Text style={styles.imgtext}>SAD </Text>
         </View>
 
         <View style={styles.border4}>
-          <Image style={styles.img} source={require('../doubt.png')} />
+          <Image style={styles.img} source={require('../assets/doubt.png')} />
           <Text style={styles.imgtext}>DOUBT</Text>
         </View>
       </View>
@@ -123,6 +123,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height:'80%',
   },
   header: {
     width: 245,
@@ -136,91 +137,93 @@ const styles = StyleSheet.create({
   mainbox: {
     justifyContent: 'space-between',
     flexDirection: 'row',
+    alignItems:'center',
+    
   },
   box: {
-    width: 330,
+    width: '90%',
     height: 235,
-    marginLeft: 2,
+    alignSelf:'center',
     marginTop: 10,
     backgroundColor: '#2FA4FF',
   },
   box1: {
-    width: 94,
+    width: 84,
     height: 58,
     marginTop: 20,
+    marginLeft:10,
     backgroundColor: '#7FB77E',
     borderRadius: 5,
+    
   },
   box2: {
-    width: 94,
+    width: 84,
     height: 58,
     marginTop: 20,
     backgroundColor: '#EC7272',
     borderRadius: 5,
   },
   box3: {
-    width: 94,
+    width: 84,
     height: 58,
     marginTop: 20,
     backgroundColor: '#E0A435',
     borderRadius: 5,
+    
+
   },
-  text1: {
-    fontWeight: '500',
-    fontSize: 13,
-    marginTop: 30,
-    textAlign: 'center',
-  },
-  text2: {
+
+  factsText: {
     fontWeight: '500',
     fontSize: 13,
     marginTop: 20,
     textAlign: 'center',
   },
+
   subheader: {
     fontWeight: '600',
-    fontSize: 22,
+    fontSize: 24,
     color: '#4E4E4E',
     marginTop: 50,
+    marginLeft:20,
   },
   mainborder: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 8,
+    margin:25,
   
   },
   border1: {
     width: 150,
-    height: 100,
+    height: 110,
     backgroundColor: '#E7E3E3',
-    boxShadow: '25',
     borderRadius: 10,
   },
   border2: {
     width: 150,
-    height: 100,
+    height: 110,
     backgroundColor: '#E7E3E3',
-    boxShadow: '25',
     borderRadius: 10,
   },
 
   border3: {
     width: 150,
-    height: 100,
+    height: 110,
     backgroundColor: '#E7E3E3',
-    boxShadow: '25',
     borderRadius: 10,
   },
   border4: {
     width: 150,
-    height: 100,
+    height: 110,
     backgroundColor: '#E7E3E3',
     boxShadow: '25',
     borderRadius: 10,
   },
   icon: {
-    marginLeft: 15,
-    marginTop: 10,
+   alignSelf:'center',
+   marginTop:10,
+   
   },
   img: {
     alignSelf: 'center',
@@ -231,7 +234,7 @@ const styles = StyleSheet.create({
   imgtext: {
     fontWeight: '600',
     fontSize: 14,
-    marginLeft:60,
+    textAlign:'center',
     marginTop:5,
 
   },
