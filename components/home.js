@@ -123,7 +123,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height:'80%',
+    height:'100%',
   },
   header: {
     width: 245,

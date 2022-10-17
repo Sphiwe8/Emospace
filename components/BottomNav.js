@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 function BottomNav() {
   return (
 
-    
+    <View style={styles.container}>
     <NavigationContainer>
         
     <Tab.Navigator>
@@ -75,12 +75,18 @@ function BottomNav() {
     </Tab.Navigator>
     
     </NavigationContainer>
-    
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-    plus: {
+  container: {
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+    height:'100%',
+  }, 
+  
+  plus: {
         width:40,
         height:40,
         backgroundColor:'#9FC9F3',
