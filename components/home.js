@@ -7,10 +7,17 @@ import { getQuotes } from './database/firestore';
 import { auth } from './configFile/config';
 import { useNavigation } from '@react-navigation/core';
 import { collection, getDocs } from "firebase/firestore";
-import  loveQoutes from '../databaseQoutes/love'
-import  sillyQoutes from '../databaseQoutes/silly'
-import  shameQoutes from '../databaseQoutes/shame'
-import  okQoutes from '../databaseQoutes/Ok'
+import  loveQoutes from '../databaseQoutes/love';
+import  sillyQoutes from '../databaseQoutes/silly';
+import  shameQoutes from '../databaseQoutes/shame';
+import  okQoutes from '../databaseQoutes/Ok';
+import  trustQoutes from '../databaseQoutes/trust';
+import  angryQoutes from '../databaseQoutes/angry';
+import  humorQoutes from '../databaseQoutes/humor';
+import  embarrestQoutes from '../databaseQoutes/embarrest';
+import  worriedQoutes from '../databaseQoutes/worried';
+
+
 
 
 
@@ -32,18 +39,6 @@ export default function Home({navigation}) {
 
   ])
 
-
-  const  worried=  [
-    {
-      message:"im worried"
-    },
-
-    {
-      message:"im worried to  much"
-    }
-
-
-  ]
 
   let list = [];
  
@@ -184,7 +179,7 @@ export default function Home({navigation}) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity    onPress={()=> navigation.navigate('Quotes' , {qoutes:worried})}>
+          <TouchableOpacity    onPress={()=> navigation.navigate('Quotes' , {qoutes:worriedQoutes})}>
             <View style={styles.border2}>
               <Image style={styles.img} source={require('../assets/worried.png')} />
               <Text style={styles.imgtext}>WORRIED </Text>
@@ -219,7 +214,7 @@ export default function Home({navigation}) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:okQoutes})}>
             <View style={styles.border4}>
               <Image style={styles.img} source={require('../assets/OK.png')} />
               <Text style={styles.imgtext}>OK</Text>
@@ -228,14 +223,14 @@ export default function Home({navigation}) {
         </View>
 
         <View style={styles.mainborder}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:trustQoutes})}>
             <View style={styles.border3}>
               <Image style={styles.img} source={require('../assets/trust.png')} />
               <Text style={styles.imgtext}>TRUST</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:angryQoutes})}>
             <View style={styles.border4}>
               <Image style={styles.img} source={require('../assets/angry.png')} />
               <Text style={styles.imgtext}>ANGRY</Text>
@@ -244,14 +239,14 @@ export default function Home({navigation}) {
         </View>
 
         <View style={styles.mainborder}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:humorQoutes})}>
             <View style={styles.border3}>
               <Image style={styles.img} source={require('../assets/humor.png')} />
               <Text style={styles.imgtext}>HUMOR</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity   onPress={()=> navigation.navigate('Quotes' , {qoutes:embarrestQoutes})}>
             <View style={styles.border4}>
               <Image style={styles.img} source={require('../assets/embarrest.png')} />
               <Text style={styles.imgtext}>EMBARREST</Text>
