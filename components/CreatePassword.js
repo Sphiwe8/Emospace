@@ -7,11 +7,14 @@ import {
  Text,
  TouchableOpacity,
  } from 'react-native';
+import { Login } from './auth';
+import { auth } from './configFile/config'
 
-export default function Login() {
+export default function Signin() {
 
-   const [text, onChangeText] = React.useState("");
-  const [password, onChangePassword] = React.useState(null);
+   const [createpassword, setCreatepassword] = React.useState("");
+  
+
 
 
   return (
@@ -22,7 +25,7 @@ export default function Login() {
 
 
     <Text style={styles.header} >
-    Login
+    Create New Password
     </Text>
 
     <View style={styles.inputs} >
@@ -32,40 +35,28 @@ export default function Login() {
 <View style={styles.username} >
 
 <Text style={styles.user} >
-    Email Address
+    Create Password
     </Text>
 
      <TextInput
-       placeholder="Enter Email"
+       placeholder="Enter new password"
         style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
+        onChangeText={(createpassword) => setCreatepassword(createpassword)}
+       
       />
 
       </View>
 
       
-      <View style={styles.username} >
-      <Text style={styles.user} >
-    Enter Password
-    </Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangePassword}
-        value={password}
-        placeholder="Password"
-        keyboardType="password"
-      />
-
-      </View>
+   
       
       </View>
 
       
 
-       <TouchableOpacity style={styles.button1}>      
+       <TouchableOpacity style={styles.button1}  >      
 <Text style={styles.buttonText1}>
-      Log in
+      Create
       </Text>
 </TouchableOpacity>
 
@@ -79,8 +70,9 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     justifyContent:'center',
-    
+    backgroundColor:'#fff',
     height:'100%',
+      
     
     
   },
@@ -89,7 +81,7 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     height: 80,
     width: 180,
-    marginTop:25,
+    marginTop:-25,
     
     
   },
@@ -113,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   inputs:{
-    marginTop:40,
+    marginTop:20,
   },
 
     button1: {
@@ -122,7 +114,7 @@ width: 220,
 height: 50,
 backgroundColor:'#2FA4FF',
 alignSelf:'center',
-marginTop:60,
+marginTop:40,
 borderRadius:20,
 
   },

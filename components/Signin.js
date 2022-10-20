@@ -8,19 +8,18 @@ import {
  TouchableOpacity,
  ActivityIndicator
  } from 'react-native';
+
  import { useNavigation } from '@react-navigation/core';
- import { createUserWithEmailAndPassword,  signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from './configFile/config'
+import { createUserWithEmailAndPassword,  signInWithEmailAndPassword} from "firebase/auth";
 
- import { auth } from './configFile/config'
-
-
-export default function Signup() {
+export default function Signin() {
 
    const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState('');
 
   const navigation = useNavigation()
-
+  
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
@@ -31,28 +30,45 @@ export default function Signup() {
     return unsubscribe
   }, [])
 
-  const handleSignUp = () => {
+
+
+  const handleLogin = () => {
     
-      createUserWithEmailAndPassword(auth ,email, password)
+    if (email == "" && password ==""){
+      alert('Please enter your password and email' )
+
+    } else {
+      signInWithEmailAndPassword(auth ,email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        <ActivityIndicator size="small" color="#0000ff" />
-        console.log('Registered with:', user.email);
+       
+        console.log('Logged in with:', user.email);
+
+       
       })
       .catch(error => alert(error.message))
+    }
+     
   }
 
-  const login = () => {
-    navigation.navigate('Signin');
+  const signup = () => {
+    navigation.navigate('Signup');
   };
 
+  const create = () => {
+    navigation.navigate('CreatePassword');
+  };
+   
+
   return (
+
+    
     <View style={styles.container}>
     <Image style={styles.logo} source={require('../assets/tiny.png')} />
 
 
     <Text style={styles.header} >
-    Sign Up
+    Login
     </Text>
 
     <View style={styles.inputs} >
@@ -71,18 +87,18 @@ export default function Signup() {
         onChangeText={(email) => setEmail(email)}
        
       />
-
+ 
       </View>
 
       
       <View style={styles.username} >
       <Text style={styles.user} >
-    Create Password
+    Enter Password
     </Text>
       <TextInput
         style={styles.input}
-        onChangeText={(password) => setPassword(password)}
         secureTextEntry 
+        onChangeText={(password) => setPassword(password)}
         placeholder="Password"
         keyboardType="password"
       />
@@ -91,23 +107,31 @@ export default function Signup() {
       
       </View>
 
-<View>
-<Text style={styles.linkText}>
-      Already have an Account?
+      <View>
+      <Text style={styles.linkText}>
+      Don't have an Account?
       </Text>
 
 
-<TouchableOpacity>      
-<Text style={styles.link} onPress={login}>
-      Log in
+<TouchableOpacity onPress={signup}>      
+<Text style={styles.link}>
+      Sign up
       </Text>
 </TouchableOpacity>
-</View>
+
+<TouchableOpacity onPress={create}>      
+<Text style={styles.link}>
+      Forgot password?
+      </Text>
+</TouchableOpacity>
+
+      </View>
+
       
 
-       <TouchableOpacity style={styles.button1}  onPress={handleSignUp}>      
+       <TouchableOpacity style={styles.button1} onPress={handleLogin} >      
 <Text style={styles.buttonText1}>
-      Sign up
+      Log in
       </Text>
 </TouchableOpacity>
 
@@ -131,7 +155,27 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     height: 80,
     width: 180,
+    marginTop:25,
     
+    
+  },
+
+  header: {
+    textAlign: 'center',
+    fontSize: 28,
+    fontWeight: '500',
+    color: '#2FA4FF',
+    
+    
+
+  },
+
+  user:{
+    fontSize: 17,
+    fontWeight: '300',
+    paddingLeft: 45,
+
+
   },
 
   linkText:{
@@ -148,21 +192,7 @@ const styles = StyleSheet.create({
     textAlign:'center',
       },
 
-  header: {
-    textAlign: 'center',
-    fontSize: 28,
-    fontWeight: '500',
-    color: '#2FA4FF',
-
-  },
-
-  user:{
-    fontSize: 17,
-    fontWeight: '300',
-    paddingLeft: 45,
-
-
-  },
+  
 
   inputs:{
     marginTop:40,

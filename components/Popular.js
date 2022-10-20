@@ -1,8 +1,15 @@
-import * as React from 'react';
+import {React, useEffect}from 'react';
 import { Text, View, StyleSheet, Image,ScrollView } from 'react-native';
 
+import { db } from './configFile/config' 
+import { getQuotes } from './database/firestore';
 
 export default function Popular() {
+
+  useEffect (()=>{
+
+  
+  })
   return (
     <View style={styles.container}>
 <Text style={styles.heading}>Popular</Text>
@@ -18,7 +25,7 @@ Left handed people are more likely to suffer from ADHD
 
         <View style={styles.box2}>
 
-       <Image style={styles.hand} source={require('../assets/Meeting.png')} />
+       <Image style={styles.hand} source={require('../assets/health.png')} />
      <Text style={styles.paragraph}>
 Introverts loves nature, music,books,movies, pets ect.
 </Text>
@@ -26,7 +33,7 @@ Introverts loves nature, music,books,movies, pets ect.
 
 
 <View style={styles.box3}>
-       <Image style={styles.hand} source={require('../assets/Love.png')} />
+       <Image style={styles.hand} source={require('../assets/Meeting.png')} />
      <Text style={styles.paragraph}>
 Friendship is good for your health. Believe it or not, people with larger networds live longer
 </Text>

@@ -8,7 +8,7 @@ import {
  TouchableOpacity,
  } from 'react-native';
 
-export default function Cause() {
+export default function Cause({navigation, route}) {
 
    const [text, onChangeText] = React.useState("");
   const [password, onChangePassword] = React.useState(null);
@@ -18,6 +18,7 @@ export default function Cause() {
 
     
     <View style={styles.container}>  
+    <Text>I feel {route.params.feeling}</Text>
     
     <Text style={styles.header} >
    So user
@@ -29,7 +30,7 @@ export default function Cause() {
 
         <View style={styles.imageContainer}>
             
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('' ,  )}>
             <View  style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Family.png')} />
             <Text style={styles.imageText}>

@@ -8,7 +8,7 @@ import {
  TouchableOpacity,
  } from 'react-native';
 
-export default function Journey() {
+export default function Journal() {
 
 
 
@@ -22,6 +22,8 @@ export default function Journey() {
     MOOD JOURNAL
     </Text>
 </View>
+
+<Text>I feel {route.params.feeling} because of my {route.params.cause}</Text>
 
 <View style={styles.messageContainer}>
 

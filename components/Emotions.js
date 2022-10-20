@@ -8,11 +8,14 @@ import {
  TouchableOpacity,
  } from 'react-native';
 
-export default function Emotions() {
+export default function Emotions({navigation}) {
 
    const [text, onChangeText] = React.useState("");
   const [password, onChangePassword] = React.useState(null);
 
+  const happy = () => {
+    navigation.navigate('Cause');
+  };
 
   return (
 
@@ -29,7 +32,7 @@ export default function Emotions() {
 
         <View style={styles.imageContainer}>
             
-            <TouchableOpacity>
+            <TouchableOpacity     onPress={()=> navigation.navigate('Cause' , {feeling:"Happy"})}>
             <View  style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/Happy.png')} />
             <Text style={styles.imageText}>
@@ -39,7 +42,7 @@ export default function Emotions() {
             </TouchableOpacity>
             
 
-            <TouchableOpacity>
+            <TouchableOpacity   onPress={()=> navigation.navigate('Cause' , {feeling:"Love"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/love.png')} />
             <Text style={styles.imageText}>

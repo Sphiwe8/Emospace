@@ -12,7 +12,8 @@ import { Audio } from 'expo-av';
 
 
 
-export default function Sounds() {
+
+export default function Sounds({navigation}) {
   const [sound, setSound] = React.useState();
 
 
@@ -58,15 +59,19 @@ export default function Sounds() {
     await sound.playAsync();
   }
 
-  async function Pause(song) {
+  async function pauseSound(song) {
     console.log(songs.title);
     const { sound } = await Audio.Sound.createAsync('')
     
     setSound('');
 
     console.log('Song PAUSED');
-   // await sound.playAsync();
+    await sound.pauseAsync();
   }
+
+  const playlist = () => {
+    navigation.navigate('Controller');
+  };
 
 
   return (
@@ -89,7 +94,7 @@ export default function Sounds() {
         <ScrollView>
           {songs.map((song) => (
             <Card style={styles.card2} onPress={() =>playSound(song.song)} >
-              <View style={{ flexDirection: "row", justifyContent: 'space-between', marginTop: 8, }}>
+              <View style={{ flexDirection: "row", justifyContent: 'space-between', marginTop: 8, }} onPress={playlist}>
                 <Image source={music} style={{ width: 30, height: 35, marginLeft: 15, }} />
                 <Image source={menu} style={{ width: 25, height: 35, marginLeft: -15, }} />
                 

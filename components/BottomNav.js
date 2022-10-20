@@ -10,7 +10,7 @@ import Profile from '../components/Profile';
 
 import Sounds from '../components/Sound';
 
-import Video from '../components/Video';
+import Journal from '../components/Journal';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,11 +18,12 @@ function BottomNav() {
   return (
 
     <View style={styles.container}>
-    <NavigationContainer>
+   
         
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} 
        options={{
+        headerShown: false,
         tabBarLabel: 'Home', 
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="home" color={color} size={26} />
@@ -40,7 +41,7 @@ function BottomNav() {
      
       />
 
-<Tab.Screen name="Journal" component={Emotions} 
+<Tab.Screen name="Emotions" component={Emotions} 
       options={{
         tabBarLabel: 'plus',
         tabBarIcon: ({ color }) => (
@@ -51,11 +52,11 @@ function BottomNav() {
       }}
       />
 
-<Tab.Screen name="Video" component={Video} 
+<Tab.Screen name="Saved" component={Journal} 
        options={{
-        tabBarLabel: 'video',
+        tabBarLabel: 'Saved',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="video" color={color} size={26} />
+          <MaterialCommunityIcons name="book" color={color} size={26} />
         ),
       }}
       />
@@ -74,7 +75,7 @@ function BottomNav() {
 
     </Tab.Navigator>
     
-    </NavigationContainer>
+    
     </View>
   );
 }

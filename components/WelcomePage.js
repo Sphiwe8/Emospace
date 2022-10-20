@@ -1,8 +1,20 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 
 
 export default function WelcomePage() {
+
+  const navigation = useNavigation()
+
+  const signup = () => {
+    navigation.navigate('Signup');
+  };
+
+  const signin = () => {
+    navigation.navigate('Signin');
+  };
+
   return (
 
 
@@ -15,7 +27,7 @@ export default function WelcomePage() {
         Welcome to Emospace. Sign up to start your Journey with us or if you already have an account with, than just Log in . Proudly designed by Mlab.
       </Text>
 
-      <TouchableOpacity style={styles.button1} >
+      <TouchableOpacity style={styles.button1} onPress={signup} >
       <Text style={styles.buttonText1}>
       SIGN UP
       </Text>
@@ -25,7 +37,7 @@ export default function WelcomePage() {
       OR
       </Text>
 
-      <TouchableOpacity style={styles.button2} >
+      <TouchableOpacity style={styles.button2} onPress={signin} >
       <Text style={styles.buttonText2}>
       LOG IN
       </Text>

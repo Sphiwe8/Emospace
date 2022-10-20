@@ -1,17 +1,19 @@
 
 import { createUserWithEmailAndPassword,  signInWithEmailAndPassword} from "firebase/auth";
 
-const Signup =(()=>{
+const handleSignUp =((auth, email, password)=>{
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      // ...
+    alert("Login successfully")
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(errorMessage) ;
+      console.log(errorMessage);
       // ..
     });
 
@@ -21,19 +23,20 @@ const Signup =(()=>{
 
 
 
-const Login =(()=>{
+const handleLogin =((auth, email, password)=>{
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      // ...
+      alert("Login successfully")
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(errorMessage);
     });
 
 })
 
 
-export{Signup, Login}
+export{handleSignUp,  handleLogin}

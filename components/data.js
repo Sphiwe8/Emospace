@@ -3,18 +3,21 @@ const songs = [
       title: "death bed",
       artist: "Powful",
       image: require("../assets/death.jpg"),
+      song: require('../assets/hello.mp3'),
       id: "1",
     },
     {
       title: "bad liar",
       artist: "Tshepang",
       image: require("../assets/Robyn2.jpg"),
+      song: require('../assets/hello.mp3'),
       id: "2",
     },
     {
       title: "faded",
       artist: "Alan Walker",
       image: require("../assets/faded.png"),
+      song: require('../assets/hello.mp3'),
       id: "3",
     },
     {
