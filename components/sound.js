@@ -9,6 +9,7 @@ import play from '../assets/play-circle-outline.png';
 import music from '../assets/musical-notes.png';
 import menu from '../assets/menu-2.png';
 import { Audio } from 'expo-av';
+import songs from '../components/data'
 
 
 
@@ -17,38 +18,7 @@ export default function Sounds({navigation}) {
   const [sound, setSound] = React.useState();
 
 
-  const [songs, setSong] = React.useState([
-    {
-      title: "Rain",
-      song: require('../assets/hello.mp3')
-    },
-
-    {
-      title: "Forest",
-      song: require('../assets/hello2.mp3')
-    },
-
-    {
-      title: "Sunny day",
-      song: require('../assets/hello3.mp3')
-    },
-
-    {
-      title: "Farm",
-      song:  require('../assets/hello4.mp3')
-    },
-
-    {
-      title: "Big city",
-      song:  require('../assets/hello5.mp3')
-    },
-
-    {
-      title: "Universe",
-      song: require('../assets/hello6.mp3')
-    },
-  ])
-
+  
   async function playSound(song) {
     console.log(songs.title);
     const { sound } = await Audio.Sound.createAsync(song)
@@ -89,12 +59,12 @@ export default function Sounds({navigation}) {
       <Text style={styles.text}>Playlist</Text>
       <Text style={styles.text1}>10 Sounds</Text>
 
-
-      <View style={styles.musicContainer}>
-        <ScrollView>
+      <ScrollView>
+      <View style={styles.musicContainer}  >
+ 
           {songs.map((song) => (
-            <Card style={styles.card2} onPress={() =>playSound(song.song)} >
-              <View style={{ flexDirection: "row", justifyContent: 'space-between', marginTop: 8, }} onPress={playlist}>
+            <Card style={styles.card2} onPress={()=> navigation.navigate('Player', {song:song.title, artist:song.artist,image:song.image} )} >
+              <View style={{ flexDirection: "row", justifyContent: 'space-between', marginTop: 8, }}  >
                 <Image source={music} style={{ width: 30, height: 35, marginLeft: 15, }} />
                 <Image source={menu} style={{ width: 25, height: 35, marginLeft: -15, }} />
                 
@@ -104,12 +74,8 @@ export default function Sounds({navigation}) {
               </Text>
             </Card>
           ))}
-
-
-
-        </ScrollView>
       </View>
-
+      </ScrollView>
 
 
 
@@ -171,13 +137,13 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   paragraph: {
-    position: 'absolute',
-    width: 270,
+    width: 390,
     top: 70,
-    alignSelf: 'center',
+    textAlign: 'center',
     fontWeight: '300',
-    fontSize: 22,
-    color: '#585757'
+    fontSize: 23,
+    color: '#585757',
+
   },
   text: {
     position: 'absolute',

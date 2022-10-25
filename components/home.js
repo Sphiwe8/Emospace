@@ -16,6 +16,8 @@ import  angryQoutes from '../databaseQoutes/angry';
 import  humorQoutes from '../databaseQoutes/humor';
 import  embarrestQoutes from '../databaseQoutes/embarrest';
 import  worriedQoutes from '../databaseQoutes/worried';
+import  painQoutes from '../databaseQoutes/pain';
+import  psychologicalFacts from '../databaseQoutes/PsychologicalFacts';
 
 
 
@@ -24,38 +26,32 @@ import  worriedQoutes from '../databaseQoutes/worried';
 export default function Home({navigation}) {
 
 
-
-  const [psychologicalFacts, setPsychologicalFacts] = useState([
-    {
-      message: "Testing"
-    },
-
-    {
-      message: "checking"
-    },
-
-
-
-
-  ])
-
-
   let list = [];
  
-  //"Psychology Facts
+
 
 
   useEffect(async () => {
+    getPsychologicalFacts();
+  }, []);
+
+
+  const getPsychologicalFacts = (async()=>{
+    console.log("im in ")
     try {
       const querySnapshot = await getDocs(collection(db, 'Psychology Facts'));
-      querySnapshot.forEach((doc) => {
-        list.push(doc.data());
-      });
-      setPsychologicalFacts(list);
-      console.log(list);
+      const data = querySnapshot.docs.map((doc)=>({
+        id:doc.id,
+        ...doc.data()
+
+      }))
+      console.log(data)
+      setPsychologicalFacts(data);
+      console.log(psychologicalFacts);
     }
     catch (error) { }
-  }, []);
+  })
+
 
   const emotional = () => {
     navigation.navigate('EmotionalFacts');
@@ -91,8 +87,18 @@ export default function Home({navigation}) {
     <ScrollView>
       <View style={styles.container}>
         <Text style={styles.header}>Psychological Facts</Text>
+
+        <TouchableOpacity onPress={handleSignOut} style={styles.button2}>
+          <Text style={styles.buttonText2}>
+            SIGN OUT
+          </Text>
+        </TouchableOpacity> 
+
+
+
+
         <View style={styles.box}>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1,  }}>
             <Swiper style={styles.swiper}
               Horizontal
               loop
@@ -118,16 +124,10 @@ export default function Home({navigation}) {
 
               {psychologicalFacts.map((data) => (
                 <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#c9ffff)" }}>
+                 
                   <Text style={styles.qoutes}>{data.message}</Text>
                 </View>
               ))}
-
-
-
-
-
-
-
 
 
 
@@ -171,94 +171,93 @@ export default function Home({navigation}) {
         <Text style={styles.subheader}>Emotions</Text>
 
 
+
         <View style={styles.mainborder}>
+
+          
           <TouchableOpacity  onPress={()=> navigation.navigate('Quotes' , {qoutes:loveQoutes})}>
-            <View style={styles.border1}  >
+            <Card style={styles.border1}  >
               <Image style={styles.img} source={require('../assets/loved.png')} />
               <Text style={styles.imgtext}>LOVE</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
 
           <TouchableOpacity    onPress={()=> navigation.navigate('Quotes' , {qoutes:worriedQoutes})}>
-            <View style={styles.border2}>
+            <Card style={styles.border2}>
               <Image style={styles.img} source={require('../assets/worried.png')} />
               <Text style={styles.imgtext}>WORRIED </Text>
-            </View>
+            </Card>
           </TouchableOpacity>
         </View>
 
 
         <View style={styles.mainborder}>
           <TouchableOpacity  onPress={()=> navigation.navigate('Quotes' , {qoutes:shameQoutes})}>
-            <View style={styles.border3}>
+            <Card style={styles.border3}>
               <Image style={styles.img} source={require('../assets/shame.png')} />
               <Text style={styles.imgtext}>SHAME</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
 
           <TouchableOpacity  onPress={()=> navigation.navigate('Quotes' , {qoutes:sillyQoutes})}>
-            <View style={styles.border4}>
+            <Card style={styles.border4}>
               <Image style={styles.img} source={require('../assets/silly.png')} />
               <Text style={styles.imgtext}>SILLY</Text>
-            </View>
+            </Card>
 
           </TouchableOpacity>
         </View>
 
 
         <View style={styles.mainborder}>
-          <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:okQoutes})}>
-            <View style={styles.border3}>
+          <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:painQoutes})}>
+            <Card style={styles.border3}>
               <Image style={styles.img} source={require('../assets/pain.png')} />
               <Text style={styles.imgtext}>PAIN</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:okQoutes})}>
-            <View style={styles.border4}>
+            <Card style={styles.border4}>
               <Image style={styles.img} source={require('../assets/OK.png')} />
               <Text style={styles.imgtext}>OK</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
         </View>
 
         <View style={styles.mainborder}>
           <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:trustQoutes})}>
-            <View style={styles.border3}>
+            <Card style={styles.border3}>
               <Image style={styles.img} source={require('../assets/trust.png')} />
               <Text style={styles.imgtext}>TRUST</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:angryQoutes})}>
-            <View style={styles.border4}>
+            <Card style={styles.border4}>
               <Image style={styles.img} source={require('../assets/angry.png')} />
               <Text style={styles.imgtext}>ANGRY</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
         </View>
 
         <View style={styles.mainborder}>
           <TouchableOpacity onPress={()=> navigation.navigate('Quotes' , {qoutes:humorQoutes})}>
-            <View style={styles.border3}>
+            <Card style={styles.border3}>
               <Image style={styles.img} source={require('../assets/humor.png')} />
               <Text style={styles.imgtext}>HUMOR</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
 
           <TouchableOpacity   onPress={()=> navigation.navigate('Quotes' , {qoutes:embarrestQoutes})}>
-            <View style={styles.border4}>
+            <Card style={styles.border4}>
               <Image style={styles.img} source={require('../assets/embarrest.png')} />
               <Text style={styles.imgtext}>EMBARREST</Text>
-            </View>
+            </Card>
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={handleSignOut} style={styles.button2}>
-          <Text style={styles.buttonText2}>
-            SIGN OUT
-          </Text>
-        </TouchableOpacity>
+        
 
       </View>
     </ScrollView>
@@ -273,7 +272,7 @@ const styles = StyleSheet.create({
     width: 245,
     height: 30,
     marginLeft: 10,
-    marginTop: 50,
+    marginTop: 60,
     fontWeight: '500',
     fontSize: 24,
     fontStyle: 'normal',
@@ -288,17 +287,18 @@ const styles = StyleSheet.create({
     width: '90%',
     height: 235,
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 15,
     backgroundColor: '#2FA4FF',
   },
 
   button2: {
-    margin: 10,
-    width: 190,
+    width: 90,
     height: 40,
     backgroundColor: '#DD5353',
     justifyContent: 'center',
-    alignSelf: 'center',
+    marginLeft:280,
+    marginTop:-50,
+
 
   },
 
@@ -362,26 +362,26 @@ const styles = StyleSheet.create({
   border1: {
     width: 150,
     height: 110,
-    backgroundColor: '#E7E3E3',
+
     borderRadius: 10,
   },
   border2: {
     width: 150,
     height: 110,
-    backgroundColor: '#E7E3E3',
+
     borderRadius: 10,
   },
 
   border3: {
     width: 150,
     height: 110,
-    backgroundColor: '#E7E3E3',
+    
     borderRadius: 10,
   },
   border4: {
     width: 150,
     height: 110,
-    backgroundColor: '#E7E3E3',
+    
     boxShadow: '25',
     borderRadius: 10,
   },
@@ -405,8 +405,8 @@ const styles = StyleSheet.create({
   },
   qoutes: {
     alignSelf: 'center',
-    fontWeight: '600',
-    fontSize: 14,
+    fontWeight: '250',
+    fontSize:14,
     marginTop: 2,
     color: 'white',
 

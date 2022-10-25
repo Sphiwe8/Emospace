@@ -7,7 +7,7 @@ import {
  Text,
  TouchableOpacity,
  } from 'react-native';
-
+ import WriteJournal from '../components/WriteJounal';
 export default function Cause({navigation, route}) {
 
    const [text, onChangeText] = React.useState("");
@@ -30,7 +30,7 @@ export default function Cause({navigation, route}) {
 
         <View style={styles.imageContainer}>
             
-            <TouchableOpacity onPress={()=> navigation.navigate('' ,  )}>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:" Family"})}>
             <View  style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Family.png')} />
             <Text style={styles.imageText}>
@@ -40,7 +40,7 @@ export default function Cause({navigation, route}) {
             </TouchableOpacity>
             
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:" Friends"})} >
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Friends.png')} />
             <Text style={styles.imageText}>
@@ -50,7 +50,7 @@ export default function Cause({navigation, route}) {
             </TouchableOpacity>
             
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Date"}  )}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Tango.png')} />
             <Text style={styles.imageText}>
@@ -59,7 +59,7 @@ export default function Cause({navigation, route}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal' , {feeling:route.params.feeling, cause:"School"})} >
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/School.png')} />
             <Text style={styles.imageText}>
@@ -72,7 +72,7 @@ export default function Cause({navigation, route}) {
 
         <View style={styles.imageContainer}>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Work"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Work.png')} />
             <Text style={styles.imageText}>
@@ -81,7 +81,7 @@ export default function Cause({navigation, route}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Children"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Children.png')} />
             <Text style={styles.imageText}>
@@ -90,7 +90,7 @@ export default function Cause({navigation, route}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal',{feeling:route.params.feeling, cause:"Bully"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Bully.png')} />
             <Text style={styles.imageText}>
@@ -99,7 +99,7 @@ export default function Cause({navigation, route}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Groove"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Groove.png')} />
             <Text style={styles.imageText}>
@@ -111,7 +111,7 @@ export default function Cause({navigation, route}) {
         </View>
 
         <View style={styles.imageContainer}>
-<TouchableOpacity>
+<TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Home"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/House.png')} />
             <Text style={styles.imageText}>
@@ -121,7 +121,7 @@ export default function Cause({navigation, route}) {
             </TouchableOpacity>
 
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Sleep"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Sleep.png')} />
             <Text style={styles.imageText}>
@@ -130,7 +130,7 @@ export default function Cause({navigation, route}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Exercise"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Deadlift.png')} />
             <Text style={styles.imageText}>
@@ -141,7 +141,7 @@ export default function Cause({navigation, route}) {
 
             
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('WriteJournal', {feeling:route.params.feeling, cause:"Church"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../causeAssets/Church.png')} />
             <Text style={styles.imageText}>
@@ -153,13 +153,7 @@ export default function Cause({navigation, route}) {
         </View>
 
 
-       
-    
-        
-    
 
-
-  
 
       
     </View>

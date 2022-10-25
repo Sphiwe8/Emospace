@@ -15,8 +15,9 @@ import {
 
 
 export default function Signup() {
-
-   const [email, setEmail] = React.useState("");
+  const [firstname, setFirstName] = React.useState('');
+  const [lastname, setLastName] = React.useState('');
+  const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState('');
 
   const navigation = useNavigation()
@@ -57,7 +58,31 @@ export default function Signup() {
 
     <View style={styles.inputs} >
 
-    
+    <View style={styles.username} >
+
+<Text style={styles.user} >
+    First Name
+    </Text>
+
+     <TextInput
+       placeholder="Enter your First Name"
+        style={styles.input}
+        onChangeText={(firstname) => setFirstName(firstname)}/>
+      </View>
+
+      <View style={styles.username} >
+
+<Text style={styles.user} >
+    Last Name
+    </Text>
+
+     <TextInput
+       placeholder="Enter your Last Name"
+        style={styles.input}
+        onChangeText={(lastname) => setLastName(last)}/>
+      </View>
+
+
 
 <View style={styles.username} >
 
@@ -73,9 +98,8 @@ export default function Signup() {
       />
 
       </View>
-
-      
       <View style={styles.username} >
+
       <Text style={styles.user} >
     Create Password
     </Text>
@@ -92,6 +116,13 @@ export default function Signup() {
       </View>
 
 <View>
+
+<TouchableOpacity style={styles.button1}  onPress={handleSignUp}>      
+<Text style={styles.buttonText1}>
+      Sign up
+      </Text>
+</TouchableOpacity>
+
 <Text style={styles.linkText}>
       Already have an Account?
       </Text>
@@ -105,12 +136,7 @@ export default function Signup() {
 </View>
       
 
-       <TouchableOpacity style={styles.button1}  onPress={handleSignUp}>      
-<Text style={styles.buttonText1}>
-      Sign up
-      </Text>
-</TouchableOpacity>
-
+   
 
       
       
@@ -128,6 +154,7 @@ const styles = StyleSheet.create({
   },
   
   logo: {
+    marginTop:70,
     alignSelf:'center',
     height: 80,
     width: 180,
@@ -194,7 +221,7 @@ marginTop:30,
 
      input: {
     height: 50,
-    margin: 12,
+  
     width:'80%',
     borderWidth: 1,
     padding: 10,

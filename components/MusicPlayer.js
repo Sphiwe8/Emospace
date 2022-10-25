@@ -12,39 +12,28 @@ import {
 
 import songs from "./data";
 import Controller from "./Controller";
+import { async } from "@firebase/util";
+import { Audio } from 'expo-av';
 
 const { width, height } = Dimensions.get("window");
 
-export default function Player() {
+export default function Player({route, navigation}) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   const slider = useRef(null);
   const [songIndex, setSongIndex] = useState(0);
+  
 
   // for tranlating the album art
   const position = useRef(Animated.divide(scrollX, width)).current;
 
-  useEffect(() => {
-    // position.addListener(({ value }) => {
-    //   console.log(value);
-    // });
+  useEffect(async () => {
 
-    scrollX.addListener(({ value }) => {
-      const val = Math.round(value / width);
-
-      setSongIndex(val);
-
-      // little buggy
-      //if previous index is not same then only update it
-      // if (val !== songIndex) {
-      //   setSongIndex(val);
-      //   console.log(val);
-      // }
-    });
-
-    return () => {
-      scrollX.removeAllListeners();
-    };
+    console.log(songs.title);
+    const { sound } = await Audio.Sound.createAsync(route.params.title)
+    setSound(sound);
+    console.log('Playing Song');
+    await sound.playAsync();
   }, []);
 
   const goNext = () => {
@@ -75,7 +64,7 @@ export default function Player() {
         }}
       >
         <Animated.Image
-          source={item.image}
+          source={route.params.image}
           style={{ width: 320, height: 320, borderRadius: 5 }}
         />
       </Animated.View>
@@ -84,29 +73,31 @@ export default function Player() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <SafeAreaView style={{ height: 320 }}>
-        <Animated.FlatList
-          ref={slider}
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          scrollEventThrottle={16}
-          data={songs}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-            { useNativeDriver: true }
-          )}
-        />
-      </SafeAreaView>
+    
       <View>
-        <Text style={styles.title}>{songs[songIndex].title}</Text>
-        <Text style={styles.artist}>{songs[songIndex].artist}</Text>
+
+      <Animated.View
+        style={{
+          alignItems: "center",
+          width: width,
+          
+        }}
+      >
+        <Animated.Image
+          source={route.params.image}
+          style={{ width: 320, height: 320, borderRadius: 5 }}
+        />
+      </Animated.View>
+
+        
+        <Text style={styles.title}>{route.params.song}</Text>
+        <Text style={styles.artist}>{route.params.artist}</Text>
       </View>
 
       <Controller onNext={goNext} onPrv={goPrv} />
     </SafeAreaView>
+
+    
   );
 }
 

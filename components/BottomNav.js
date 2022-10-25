@@ -11,6 +11,7 @@ import Profile from '../components/Profile';
 import Sounds from '../components/Sound';
 
 import Journal from '../components/Journal';
+import ProfileID from './ProfileID';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,9 +53,9 @@ function BottomNav() {
       }}
       />
 
-<Tab.Screen name="Saved" component={Journal} 
+<Tab.Screen name="Journal" component={Journal} 
        options={{
-        tabBarLabel: 'Saved',
+        tabBarLabel: 'Journal',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="book" color={color} size={26} />
         ),
@@ -62,11 +63,11 @@ function BottomNav() {
       />
 
 
-<Tab.Screen name="Profile" component={Profile} 
+<Tab.Screen name="ProfileID" component={ProfileID} 
        options={{
         tabBarLabel: 'profile',
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="image" color={color} size={26} />
+          <MaterialCommunityIcons name="account" color={color} size={26} />
         ),
       }}
       />

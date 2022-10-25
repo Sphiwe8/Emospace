@@ -86,11 +86,11 @@ const styles = StyleSheet.create({
   btn: {
     backgroundColor: '#FF0000',
     height: 35,
-    width: 80,
+    width: 90,
     borderRadius: 10,
     justifyContent: 'center',
-    marginTop: 15,
-    marginLeft: 200,
+    marginTop: 5,
+    marginLeft: 250,
 
   },
   btn1: {

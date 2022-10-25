@@ -108,9 +108,23 @@ export default function Signin() {
       </View>
 
       <View>
-      <Text style={styles.linkText}>
-      Don't have an Account?
+      <TouchableOpacity onPress={create}>      
+<Text style={styles.link}>
+      Forgot password?
       </Text>
+</TouchableOpacity>
+
+
+      <TouchableOpacity style={styles.button1} onPress={handleLogin} >      
+<Text style={styles.buttonText1}>
+      Log in
+      </Text>
+</TouchableOpacity>
+
+
+  <Text style={styles.linkText}>
+  Don't have an Account?
+  </Text>
 
 
 <TouchableOpacity onPress={signup}>      
@@ -119,21 +133,12 @@ export default function Signin() {
       </Text>
 </TouchableOpacity>
 
-<TouchableOpacity onPress={create}>      
-<Text style={styles.link}>
-      Forgot password?
-      </Text>
-</TouchableOpacity>
+
 
       </View>
 
       
 
-       <TouchableOpacity style={styles.button1} onPress={handleLogin} >      
-<Text style={styles.buttonText1}>
-      Log in
-      </Text>
-</TouchableOpacity>
 
 
       
@@ -224,7 +229,7 @@ marginTop:30,
 
      input: {
     height: 50,
-    margin: 12,
+    margin: 5,
     width:'80%',
     borderWidth: 1,
     padding: 10,
@@ -232,8 +237,4 @@ marginTop:30,
     alignSelf:'center',
   },
 
-
-
-
-  
 });

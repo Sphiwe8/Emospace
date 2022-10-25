@@ -32,7 +32,7 @@ export default function Emotions({navigation}) {
 
         <View style={styles.imageContainer}>
             
-            <TouchableOpacity     onPress={()=> navigation.navigate('Cause' , {feeling:"Happy"})}>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Happy"})}>
             <View  style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/Happy.png')} />
             <Text style={styles.imageText}>
@@ -42,7 +42,7 @@ export default function Emotions({navigation}) {
             </TouchableOpacity>
             
 
-            <TouchableOpacity   onPress={()=> navigation.navigate('Cause' , {feeling:"Love"})}>
+            <TouchableOpacity   onPress={()=> navigation.navigate('Cause' , {feeling:"Loved"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/love.png')} />
             <Text style={styles.imageText}>
@@ -52,7 +52,7 @@ export default function Emotions({navigation}) {
             </TouchableOpacity>
             
 
-            <TouchableOpacity>
+            <TouchableOpacity   onPress={()=> navigation.navigate('Cause' , {feeling:"Sad"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/Sad.png')} />
             <Text style={styles.imageText}>
@@ -61,7 +61,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"OK"})} >
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/ok.png')} />
             <Text style={styles.imageText}>
@@ -74,7 +74,7 @@ export default function Emotions({navigation}) {
 
         <View style={styles.imageContainer}>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Confuse"})} >
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/confused.png')} />
             <Text style={styles.imageText}>
@@ -83,7 +83,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Sleepy"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/Sleeping.png')} />
             <Text style={styles.imageText}>
@@ -92,7 +92,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Angry"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/Angry.png')} />
             <Text style={styles.imageText}>
@@ -101,7 +101,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Crying"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/Crying.png')} />
             <Text style={styles.imageText}>
@@ -114,7 +114,7 @@ export default function Emotions({navigation}) {
 
         <View style={styles.imageContainer}>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Excited"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/excited.png')} />
             <Text style={styles.imageText}>
@@ -123,7 +123,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Cute"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/cute.png')} />
             <Text style={styles.imageText}>
@@ -132,7 +132,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Hopeful"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/hopefull.png')} />
             <Text style={styles.imageText}>
@@ -141,7 +141,7 @@ export default function Emotions({navigation}) {
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Cause' , {feeling:"Sick"})}>
             <View style={styles.emoji}>
             <Image style={styles.happy} source={require('../emojiAssets/sick.png')} />
             <Text style={styles.imageText}>
