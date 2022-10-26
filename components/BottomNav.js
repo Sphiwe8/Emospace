@@ -75,8 +75,7 @@ function BottomNav() {
 
 
     </Tab.Navigator>
-    
-    
+  
     </View>
   );
 }

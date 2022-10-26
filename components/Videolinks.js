@@ -2,7 +2,7 @@ import * as React from 'react';
 import {  View, StyleSheet, Text,Image  } from 'react-native';
 
 
- function General() {
+ function Videolinks() {
   return (
     <View style={styles.container}>
 <Text style={styles.heading}>General Facts</Text>
@@ -40,7 +40,7 @@ Over 40% of us would confess to crimes we don’t commit.
 
   );
 }
-export default General
+export default Videolinks
 const styles = StyleSheet.create({
   container: {
     flex: 1,

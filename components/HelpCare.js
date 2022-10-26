@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import { db } from './configFile/config'
 import { getQuotes } from './database/firestore';
 
-export default function Popular() {
+function HelpCare() {
 
   useEffect(() => {
 
@@ -44,6 +44,7 @@ export default function Popular() {
     </View>
   );
 }
+export default HelpCare
 const styles = StyleSheet.create({
   container: {
     flex: 1,

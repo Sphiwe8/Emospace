@@ -18,6 +18,8 @@ import  embarrestQoutes from '../databaseQoutes/embarrest';
 import  worriedQoutes from '../databaseQoutes/worried';
 import  painQoutes from '../databaseQoutes/pain';
 import  psychologicalFacts from '../databaseQoutes/PsychologicalFacts';
+import Videolinks from './Videolinks';
+
 
 
 
@@ -53,16 +55,16 @@ export default function Home({navigation}) {
   })
 
 
-  const emotional = () => {
-    navigation.navigate('EmotionalFacts');
+  const library = () => {
+    navigation.navigate('Library');
   };
 
-  const popular = () => {
-    navigation.navigate('Popular');
+  const helpCare = () => {
+    navigation.navigate('HelpCare');
   };
 
-  const general = () => {
-    navigation.navigate('General');
+  const books = () => {
+    navigation.navigate('books');
   };
 
   const nextpage = ()=>{
@@ -81,20 +83,14 @@ export default function Home({navigation}) {
       .catch(error => alert(error.message))
   }
 
-
-
   return (
     <ScrollView>
       <View style={styles.container}>
         <Text style={styles.header}>Psychological Facts</Text>
 
-        <TouchableOpacity onPress={handleSignOut} style={styles.button2}>
-          <Text style={styles.buttonText2}>
-            SIGN OUT
-          </Text>
+        <TouchableOpacity onPress={handleSignOut} >
+        <Image style={styles.img1} source={require('../assets/Logout.png')} /> 
         </TouchableOpacity> 
-
-
 
 
         <View style={styles.box}>
@@ -102,25 +98,13 @@ export default function Home({navigation}) {
             <Swiper style={styles.swiper}
               Horizontal
               loop
-              timeout={5.5}
+              timeout={6.5}
               from={1}
               minDistanceForAction={0.1}
               controlsProps={{
                 dotsTouchable: true,
-                prevPos: 'left',
-                nextPos: 'right',
-                nextTitle: '>',
-                nextTitleStyle: { color: 'white', fontSize: 24, fontWeight: '500' },
-                PrevComponent: ({ onPress }) => (
-                  <TouchableOpacity onPress={onPress}>
-                    <Text style={{ color: 'white', fontSize: 24, fontWeight: '500' }}>
-                      {'<'}
-                    </Text>
-                  </TouchableOpacity>
-                ),
               }}
             >
-
 
               {psychologicalFacts.map((data) => (
                 <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#c9ffff)" }}>
@@ -128,9 +112,6 @@ export default function Home({navigation}) {
                   <Text style={styles.qoutes}>{data.message}</Text>
                 </View>
               ))}
-
-
-
             </Swiper>
           </View>
 
@@ -138,39 +119,39 @@ export default function Home({navigation}) {
 
 
         <View style={styles.mainbox}>
-          <TouchableOpacity onPress={emotional}>
+          <TouchableOpacity onPress={library}>
             <View style={styles.box1}>
               <Image
                 style={styles.icon}
-                source={require('../assets/Categorize.png')}
+                source={require('../assets/books.png')}
               />
-              <Text style={styles.factsText}>Catagories</Text>
+              <Text style={styles.factsText}>Library</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={popular}>
+          <TouchableOpacity onPress={helpCare}>
             <View style={styles.box2}>
-              <Image style={styles.icon} source={require('../assets/Star.png')} />
-              <Text style={styles.factsText}>Popular</Text>
+              <Image style={styles.icon} source={require('../assets/help-care.png')} />
+              <Text style={styles.factsText}>Help care</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={general}>
+          <TouchableOpacity onPress={Videolinks}>
             <View style={styles.box3}>
               <Image
                 style={styles.icon}
-                source={require('../assets/generall.png')}
+                source={require('../assets/videolinks.png')}
               />
 
-              <Text style={styles.factsText}>General</Text>
+              <Text style={styles.factsText}>Video-links</Text>
             </View>
           </TouchableOpacity>
 
         </View>
 
+
+
         <Text style={styles.subheader}>Emotions</Text>
-
-
 
         <View style={styles.mainborder}>
 
@@ -298,10 +279,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginLeft:280,
     marginTop:-50,
-
+  },
+  img1:{
+    marginLeft:280,
+    marginTop:-25,
 
   },
-
   buttonText2: {
     textAlign: 'center',
     alignSelf: 'center',
@@ -310,8 +293,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#fff'
   },
-
-
   box1: {
     width: 84,
     height: 58,

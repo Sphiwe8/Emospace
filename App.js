@@ -6,7 +6,6 @@ import Controller from './components/Controller';
 import Player from './components/MusicPlayer'
 import Signup from './components/Signup';
 import ProfileID from './components/ProfileID';
-
 import Home from './components/home';
 import Profile from './components/Profile';
 
@@ -15,11 +14,12 @@ import Profile from './components/Profile';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Emotional from './components/EmotionalFacts';
-import Popular from './components/Popular';
-import General from './components/GeneralFacts';
+
+import HelpCare from './components/HelpCare';
+import Videolinks from './components/Videolinks';
 import Emotions from './components/Emotions';
 import Cause from './components/Cause';
+import Library from './components/Library';
 
 import Create from './components/CreatePassword';
 import Signin from './components/Signin';
@@ -42,12 +42,13 @@ export default function App() {
     <Stack.Screen name="Signup" options={{headerShown:false}} component={Signup} /> 
     <Stack.Screen name="CreatePassword" component={Create} />
     <Stack.Screen options={{headerShown:false}} name="Home" component={BottomNav} />
-    <Stack.Screen name="Cause" component={Cause} />
-    <Stack.Screen name="Popular" component={Popular} /> 
+    <Stack.Screen name="Videolinks" component={Videolinks} />
+    <Stack.Screen name="HelpCare" component={HelpCare} /> 
     <Stack.Screen name="Player" component={Player} />
     <Stack.Screen name="Quotes" component={Quotes} /> 
     <Stack.Screen name="WriteJournal" component={WriteJournal} />
     <Stack.Screen name="Profile" component={Profile} />
+    <Stack.Screen name="Library" component={Library} />
 
   </Stack.Navigator>
 

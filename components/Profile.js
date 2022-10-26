@@ -4,7 +4,6 @@ import { Card, Avatar, Button } from 'react-native-paper';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 
-
 const Profile = () => {
    const [Pic, setPic] = React.useState('');
 
